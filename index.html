@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-Sketch</title>
+    <!-- Corrected stylesheet link -->
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <button id="resizeButton">Set Grid Size</button>
+    <div id="gridContainer"></div>
+    <!-- Corrected script link with 'defer' -->
+    <script src="javascript.js" defer></script>
+</body>
+</html>
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etch-a-Sketch</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    #controls {
+      margin-bottom: 20px;
+    }
+
+    #grid-container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 640px;
+      height: 640px;
+      border: 2px solid #333;
+    }
+
+    .grid-square {
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      background-color: white;
+      transition: background-color 0.2s;
+    }
+  </style>
+</head>
+<body>
+  <div id="controls">
+    <button id="resize-btn">Set Grid Size</button>
+  </div>
+  <div id="grid-container"></div>
+
+  <script>
+    const container = document.getElementById('grid-container');
+    const resizeBtn = document.getElementById('resize-btn');
+
+    function createGrid(size) {
+      container.innerHTML = '';
+      const squareSize = 640 / size;
+
+      for (let i = 0; i < size * size; i++) {
+        const square = document.createElement('div');
+        square.classList.add('grid-square');
+        square.style.width = `${squareSize}px`;
+        square.style.height = `${squareSize}px`;
+        square.dataset.brightness = 100;
+
+        square.addEventListener('mouseenter', () => {
+          square.style.backgroundColor = 'skyblue';
+        });
+
+        square.addEventListener('mouseleave', () => {
+          square.style.backgroundColor = `hsl(0, 0%, ${square.dataset.brightness}%)`;
+        });
+
+        square.addEventListener('mouseover', () => {
+          let brightness = parseInt(square.dataset.brightness);
+          brightness = Math.max(0, brightness - 10);
+          square.dataset.brightness = brightness;
+          square.style.backgroundColor = `hsl(0, 0%, ${brightness}%)`;
+        });
+
+        container.appendChild(square);
+      }
+    }
+
+    resizeBtn.addEventListener('click', () => {
+      let numb = parseInt(prompt('Enter grid size (0 - 100):'));
+      if (!isNaN(numb) && numb > 0 && numb <= 100) {
+        createGrid(numb);
+      } else {
+        alert('Please enter a valid number between 0 and 100.');
+      }
+    });
+
+    // Initialize with 16x16 grid
+    createGrid(16);
+  </script>
+</body>
+</html>
+
+ -->
